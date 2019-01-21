@@ -1,0 +1,33 @@
+{
+  "noteIndex": [
+    {
+      "topic": "anaconda环境下jupyter-notebook的安装配置",
+      "isTop": false,
+      "words": 100,
+      "lastModifitedTime":"Sun, 13 Jan 2019 12:23:15 GMT",
+      "tagList": [
+        "goodBeat",
+        "Star※Light",
+        "Bananice!"
+      ]
+    },
+    {
+      "topic": "hexo-renderer-kramed与mathJax的兼容问题及解决方法",
+      "isTop": false,
+      "words": 100,
+      "lastModifitedTime":"Sun, 13 Jan 2019 12:23:15 GMT"
+    },
+    {
+      "topic": "java笔记",
+      "isTop": false,
+      "words": 100,
+      "lastModifitedTime":"Sun, 13 Jan 2019 12:23:15 GMT"
+    }
+  ],
+  "tagList": [
+    "goodBeat",
+    "Star※Light",
+    "Bananice!"
+  ],
+  "md":"# simpleNote\n\n这是一个基于create-react-app脚手架的在线笔记，预计可以实现从前端到后台完整的功能，页面设计参考[Simplenote](https://simplenote.com/)。\n\n## todolist\n- hover时的延迟出现的标签提示\n\n## 笔记暂存\n### 只用CSS实现将单个元素置于底层\n```css\ncontainerEle:before { //用伪元素+flex-box的order属性来填充\n                content: '';\n                display: flex;\n                flex-grow: 1;\n                order: 3;\n            }\n```\n- 使用伪元素+flex-grow(膨胀占据不用的空间)+order(伪元素自动排最后或者最前，故需要order来重新排序，达到让某个元素被挤到最后的效果)\n"
+}

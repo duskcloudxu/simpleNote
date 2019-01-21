@@ -1,0 +1,747 @@
+div::-webkit-scrollbar {
+  width: 0 !important;
+}
+article::-webkit-scrollbar {
+  width: 0 !important;
+}
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+.Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.Btn img {
+  height: 3vh;
+}
+.App {
+  height: 100vh;
+  display: flex;
+}
+.App .navigator {
+  width: 400px;
+  height: 100%;
+  border: #888 thin solid;
+  border-left: none;
+  border-top: none;
+  position: relative;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.App .navigator .searchBar {
+  display: flex;
+  padding: 1vh 2vh 1vh 2vh;
+  height: 5%;
+  border-bottom: thin #888 solid;
+  align-items: center;
+}
+.App .navigator .searchBar input {
+  width: 50%;
+  height: 70%;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  padding-left: 15px;
+  border: thin solid #888;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  flex-grow: 1;
+  font-size: 24px;
+}
+.App .navigator .searchBar .clearBtn {
+  flex-basis: 0px;
+  width: 0px;
+  height: 20px;
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+  transform: translateX(-50px);
+  cursor: pointer;
+}
+.App .navigator .searchBar .clearBtn img {
+  width: 20px;
+}
+.App .navigator .searchBar .clearBtn-hidden {
+  display: none;
+}
+.App .navigator .searchBar .m-addNoteBtn {
+  order: 4;
+}
+.App .navigator .index {
+  display: flex;
+  flex-direction: column;
+  height: 92%;
+}
+.App .navigator .index .index-item {
+  display: flex;
+  height: 6%;
+  cursor: pointer;
+}
+.App .navigator .index .index-item .index-item-text {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  border-bottom: thin #aaaaaa solid;
+  font-size: 16px;
+}
+.App .navigator .index .index-item .topBtn {
+  margin: 17px 5px 0px 5px;
+  width: 16px;
+  height: 16px;
+  border: 2px #eeeeee solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.App .navigator .index .index-item .topBtn .topBtn-centerBlock {
+  width: 8px;
+  height: 8px;
+  margin: calc(8px - 8px / 2);
+  border-radius: 50%;
+  background: #aaaaaa;
+}
+.App .navigator .index .index-item .topBtn .topBtn-centerBlock-off {
+  width: 8px;
+  height: 8px;
+  margin: calc(8px - 8px / 2);
+  border-radius: 50%;
+}
+.App .navigator .index .index-item .topBtn-hidden {
+  visibility: hidden;
+}
+.App .navigator .index .index-item .topBtn-selected {
+  border: 2px lightskyblue solid;
+}
+.App .navigator .index .index-item .topBtn-selected .topBtn-centerBlock {
+  background: dodgerblue;
+}
+.App .navigator .index .index-item-selected {
+  color: #1296db;
+}
+.App .navigator-hidden {
+  transform: translateX(-300px);
+  width: 0px;
+}
+.App .navigator-hidden div {
+  width: 0px;
+  display: none;
+}
+.App .textview {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.App .textview .menu {
+  display: flex;
+  padding: 1vh 2vh 1vh 2vh;
+  height: 5%;
+  border-bottom: thin #888 solid;
+  align-items: center;
+}
+.App .textview .menu .Btn {
+  order: 3;
+  margin-right: 5vh;
+  cursor: pointer;
+}
+.App .textview .menu .hideNavigatorBtn {
+  margin-left: 2vh;
+  order: 1;
+}
+.App .textview .menu:before {
+  content: '';
+  display: flex;
+  flex-grow: 1;
+  order: 2;
+}
+.App .textview .textContainer {
+  height: calc(90% - 40px);
+  overflow: hidden;
+  padding-bottom: 20px;
+  display: flex;
+}
+.App .textview .textContainer .MDE {
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.App .textview .textContainer .MDE .CodeMirror {
+  height: calc(90%);
+  overflow: scroll;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.App .textview .textContainer .MDE .editor-toolbar {
+  border: none;
+}
+.App .textview .textContainer .markdownPreview {
+  flex-grow: 1;
+  flex-basis: 0px;
+  height: 100%;
+  overflow-y: scroll;
+  max-width: 50%;
+}
+.App .textview .tagBar {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+}
+.App .textview .tagBar .tag-item {
+  display: flex;
+  height: 10px;
+  margin-left: 20px;
+  background: #cccccc;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+.App .textview .tagBar .tag-item img {
+  position: absolute;
+  width: 20px;
+  top: -5px;
+  cursor: pointer;
+}
+.App .textview .tagBar input {
+  margin-left: 20px;
+  height: 30px;
+  border: none;
+  font-size: 16px;
+}
+.App .textview .tagBar .saveNotification {
+  color: #555;
+  display: flex;
+  order: 2;
+  margin-right: 10px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.App .textview .tagBar .saveNotification-hidden {
+  color: rgba(0, 0, 0, 0);
+}
+.App .textview .tagBar:before {
+  content: '';
+  flex-grow: 1;
+  order: 1;
+}
+.App .infoTab {
+  width: 300px;
+  border-left: #888888 solid 1px;
+  padding: 20px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.App .infoTab .title {
+  display: flex;
+  color: #555;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.App .infoTab .title .m-closeBtn {
+  order: 2;
+}
+.App .infoTab .title:before {
+  content: '';
+  flex-grow: 1;
+  order: 1;
+}
+.App .infoTab .lastModifiedTime {
+  color: #555;
+  margin-bottom: 20px;
+}
+.App .infoTab .lastModifiedTime .time {
+  color: #888;
+  margin-top: 5px;
+}
+.App .infoTab .words {
+  color: #555;
+}
+.App .infoTab-hidden {
+  transform: translateX(300px);
+  padding: 0px;
+  width: 0px;
+  height: 0px;
+}
+.App .infoTab-hidden div {
+  display: none;
+}
+.App .manageTab {
+  width: 260px;
+  height: calc(100% - 42px);
+  transition: 0.5s;
+  border-right: #888 thin solid;
+  padding: 20px;
+}
+.App .manageTab .btnList {
+  border-bottom: #888 thin solid;
+}
+.App .manageTab .btnList .btn {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  cursor: default;
+}
+.App .manageTab .btnList .btn img {
+  width: 3vh;
+  margin-right: 5px;
+}
+.App .manageTab .tagList h3 {
+  color: #555;
+}
+.App .manageTab .tagList .tag-item {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: #555;
+}
+.App .manageTab-hidden {
+  -webkit-transform: translate(-260px);
+  -moz-transform: translate(-260px);
+  -ms-transform: translate(-260px);
+  -o-transform: translate(-260px);
+  transform: translate(-260px);
+  width: 0px;
+  padding: 0px;
+}
+.App .mask {
+  width: 101%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 60%;
+  z-index: 100;
+  position: absolute;
+}
+.App .promptWindow {
+  transition: 0.5s;
+  position: absolute;
+  z-index: 1000;
+  width: 50vh;
+  height: 20vh;
+  left: calc(50% - 50vh / 2);
+  top: calc(40% - 20vh / 2);
+  background: #BDC0BA;
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.App .promptWindow input {
+  width: 80%;
+  height: 30%;
+  margin-top: 30px;
+  margin-left: calc(10% - 5px);
+  padding-left: 10px;
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0);
+  font-size: 24px;
+  color: #fff;
+}
+.App .promptWindow .Btn {
+  margin-top: 40px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+.App .promptWindow .Btn:before {
+  content: "";
+  flex-grow: 1;
+}
+.App .promptWindow .yes {
+  color: #fff;
+  font-size: 30px;
+  margin: 20px;
+  transition: 0.5s;
+}
+.App .promptWindow .yes:hover {
+  color: #CB1B45;
+}
+.App .promptWindow .no {
+  color: #fff;
+  margin: 20px;
+  font-size: 30px;
+}
+.App-mobile {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+.App-mobile .Btn img {
+  height: 40px;
+}
+.App-mobile .navigator {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.App-mobile .navigator .searchBar {
+  display: flex;
+  padding: 1vh 2vh 1vh 2vh;
+  height: 80px;
+  border-bottom: thin #888 solid;
+  align-items: center;
+}
+.App-mobile .navigator .searchBar input {
+  width: 50%;
+  height: 70%;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  padding-left: 15px;
+  border: thin solid #888;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  flex-grow: 1;
+  font-size: 24px;
+}
+.App-mobile .navigator .searchBar .clearBtn {
+  flex-basis: 0px;
+  width: 0px;
+  height: 20px;
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+  transform: translateX(-50px);
+  cursor: pointer;
+}
+.App-mobile .navigator .searchBar .clearBtn img {
+  width: 20px;
+}
+.App-mobile .navigator .searchBar .clearBtn-hidden {
+  display: none;
+}
+.App-mobile .navigator .searchBar .m-addNoteBtn {
+  order: 4;
+}
+.App-mobile .navigator .index {
+  display: flex;
+  flex-direction: column;
+  height: 92%;
+}
+.App-mobile .navigator .index .index-item {
+  display: flex;
+  height: 12%;
+  cursor: pointer;
+  align-items: center;
+}
+.App-mobile .navigator .index .index-item .index-item-text {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-grow: 1;
+  border-bottom: thin #aaaaaa solid;
+  font-size: 16px;
+}
+.App-mobile .navigator .index .index-item .topBtn {
+  margin: 0px 5px 0px 5px;
+  width: 20px;
+  height: 20px;
+  border: 2px #eeeeee solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.App-mobile .navigator .index .index-item .topBtn .topBtn-centerBlock {
+  width: 16px;
+  height: 16px;
+  margin: calc(20px/2 - 16px / 2);
+  border-radius: 50%;
+  background: #aaaaaa;
+}
+.App-mobile .navigator .index .index-item .topBtn .topBtn-centerBlock-off {
+  width: 8px;
+  height: 8px;
+  margin: calc(8px - 8px / 2);
+  border-radius: 50%;
+}
+.App-mobile .navigator .index .index-item .topBtn-selected {
+  border: 2px lightskyblue solid;
+}
+.App-mobile .navigator .index .index-item .topBtn-selected .topBtn-centerBlock {
+  background: dodgerblue;
+}
+.App-mobile .navigator .index .index-item-selected {
+  color: #1296db;
+}
+.App-mobile .navigator-hidden {
+  transform: translateX(-300px);
+  width: 0px;
+}
+.App-mobile .navigator-hidden div {
+  width: 0px;
+  display: none;
+}
+.App-mobile .textview {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.App-mobile .textview .menu {
+  display: flex;
+  padding: 1vh 2vh 1vh 2vh;
+  height: 80px;
+  border-bottom: thin #888 solid;
+  align-items: center;
+  justify-content: space-between;
+}
+.App-mobile .textview .textContainer {
+  height: calc(90% - 40px);
+  overflow: hidden;
+  justify-content: center;
+  padding-bottom: 20px;
+  display: flex;
+}
+.App-mobile .textview .textContainer .MDE {
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+.App-mobile .textview .textContainer .MDE .CodeMirror {
+  height: calc(90%);
+  overflow: scroll;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.App-mobile .textview .textContainer .MDE .editor-toolbar {
+  border: none;
+  display: none;
+}
+.App-mobile .textview .textContainer .markdownPreview {
+  flex-grow: 1;
+  flex-basis: 0px;
+  height: 100%;
+  overflow-y: scroll;
+  max-width: 50%;
+}
+.App-mobile .textview .tagBar {
+  height: 75px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  display: none;
+  overflow: scroll;
+  align-items: center;
+  background: white;
+  z-index: 1000;
+}
+.App-mobile .textview .tagBar .tag-item {
+  display: flex;
+  height: 10px;
+  margin-left: 20px;
+  background: #cccccc;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  white-space: pre;
+}
+.App-mobile .textview .tagBar .tag-item img {
+  position: absolute;
+  width: 20px;
+  top: -5px;
+  cursor: pointer;
+}
+.App-mobile .textview .tagBar input {
+  margin-left: 20px;
+  height: 30px;
+  border: none;
+  font-size: 16px;
+}
+.App-mobile .textview .tagBar .saveNotification {
+  color: #555;
+  display: flex;
+  order: 2;
+  margin-right: 10px;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.App-mobile .textview .tagBar .saveNotification-hidden {
+  color: rgba(0, 0, 0, 0);
+}
+.App-mobile .textview .tagBar:before {
+  content: '';
+  flex-grow: 1;
+  order: 1;
+}
+.App-mobile .textview-hidden {
+  display: none;
+}
+.App-mobile .infoTab {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: #fff;
+  right: 0px;
+  border-left: #888888 solid 1px;
+  padding: 20px;
+  z-index: 1000;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.App-mobile .infoTab .title {
+  display: flex;
+  color: #555;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.App-mobile .infoTab .title .m-closeBtn {
+  order: 2;
+}
+.App-mobile .infoTab .title:before {
+  content: '';
+  flex-grow: 1;
+  order: 1;
+}
+.App-mobile .infoTab .lastModifiedTime {
+  color: #555;
+  margin-bottom: 20px;
+}
+.App-mobile .infoTab .lastModifiedTime .time {
+  color: #888;
+  margin-top: 5px;
+}
+.App-mobile .infoTab .words {
+  color: #555;
+}
+.App-mobile .infoTab-hidden {
+  transform: translateX(300px);
+  padding: 0px;
+  width: 0px;
+  height: 0px;
+}
+.App-mobile .infoTab-hidden div {
+  display: none;
+}
+.App-mobile .manageTab {
+  width: 30vh;
+  height: calc(100% - 42px);
+  transition: 0.5s;
+  border-right: #888 thin solid;
+  padding: 20px;
+}
+.App-mobile .manageTab .btnList {
+  border-bottom: #888 thin solid;
+}
+.App-mobile .manageTab .btnList .btn {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  cursor: default;
+}
+.App-mobile .manageTab .btnList .btn img {
+  width: 3vh;
+  margin-right: 5px;
+}
+.App-mobile .manageTab .tagList h3 {
+  color: #555;
+}
+.App-mobile .manageTab .tagList .tag-item {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: #555;
+}
+.App-mobile .manageTab-hidden {
+  -webkit-transform: translate(-260px);
+  -moz-transform: translate(-260px);
+  -ms-transform: translate(-260px);
+  -o-transform: translate(-260px);
+  transform: translate(-260px);
+  width: 0px;
+  padding: 0px;
+}
+.App-mobile .mask {
+  width: 101%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 60%;
+  z-index: 100;
+  position: absolute;
+}
+.App-mobile .promptWindow {
+  transition: 0.5s;
+  position: absolute;
+  z-index: 1000;
+  width: 30vh;
+  height: 20vh;
+  left: calc(50% - 30vh / 2 - 2vh);
+  top: calc(40% - 20vh / 2);
+  background: #BDC0BA;
+  padding: 20px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.App-mobile .promptWindow input {
+  width: 80%;
+  height: 30%;
+  margin-top: 10px;
+  margin-left: calc(10% - 5px);
+  padding-left: 10px;
+  border: 2px solid #fff;
+  background: rgba(0, 0, 0, 0);
+  font-size: 24px;
+  color: #fff;
+}
+.App-mobile .promptWindow .Btn {
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+.App-mobile .promptWindow .Btn:before {
+  content: "";
+  flex-grow: 1;
+}
+.App-mobile .promptWindow .yes {
+  color: #fff;
+  font-size: 20px;
+  margin: 20px;
+  transition: 0.5s;
+}
+.App-mobile .promptWindow .yes:hover {
+  color: #CB1B45;
+}
+.App-mobile .promptWindow .no {
+  color: #fff;
+  margin: 20px;
+  font-size: 20px;
+}
+/*# sourceMappingURL=index.css.map */
